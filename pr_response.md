@@ -36,8 +36,14 @@ The downside is that users who want to share their watchlists with friends will 
 
 ## Comment 5 — Sort order
 **My position:**
+I would keep the watchlist films ordered alphabetically.
+
 **Reasoning:**
+Keeping the watchlist films ordered alphabetically ensures that the films stay in a consistant, predictable order. If a user is looking specifically for a film, they can just browse through the watchlist, skipping forward to a particular section depending on the starting letter of the movie. If the user wanted to watch a film but does not know when they added it to the watchlist, sorting by date added would force them to scroll through their entire watchlist, whereas the film would be easier to find if the watchlist was sorted alphabetically.
+
 **Engagement with reviewer's point:**
+Although having the films sorted by date added might be convenient for users wanting to watch films they most recently added to their watchlist, this ordering will likely be inconvenient for users wanting to browse through their watchlist and pick a film since it the order of films will not be structured well. Also, sorting watchlist films by date added will make it more likely users will just pick more recently added films from their watchlist to watch, making it likely that watchlist films from a while ago will not be watched.
+
 
 ## Comment 6 — Rebase
 **What conflicted:**
