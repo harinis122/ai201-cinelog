@@ -47,8 +47,13 @@ Although having the films sorted by date added might be convenient for users wan
 
 ## Comment 6 — Rebase
 **What conflicted:**
+I did not get any rebase conflicts.
+
 **How I resolved it:**
+N/A
+
 **How I verified no conflict remains:**
+N/A
 
 ## PR Description
 <!-- Written at the end — feature overview, design decisions, manual testing steps -->
