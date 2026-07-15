@@ -25,8 +25,14 @@ I verified that this new test case passes, and that all test cases in test_watch
 
 ## Comment 4 — Default visibility
 **My position:**
+I would change the default to public=False in watchlist_service.md.
+
 **Reasoning:**
+I think watchlists should be private by default because users may save films for personal reasons and may not expect that activity to be visible to other people. A private default gives users more control over what they share and avoids exposing their watchlist without an explicit choice. This would not necessarily cut down on the social aspect of this app as users are still sharing the movies in their collection, and setting public=False would give the user the ability to explore movies in private. Of course, they can also manually change it to public if they specifically want their friends to see their watchlist. I'm prioritizing personal privacy.
+
 **Tradeoff acknowledged:**
+The downside is that users who want to share their watchlists with friends will need to take an extra step to make them public. This creates slightly more friction for CineLog’s social features, but I think protecting user privacy by default is the safer choice.
+
 
 ## Comment 5 — Sort order
 **My position:**

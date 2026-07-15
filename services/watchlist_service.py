@@ -14,7 +14,7 @@ class AlreadyInWatchlistError(Exception):
     pass
 
 
-def add_to_watchlist(user_id, film_id):
+def add_to_watchlist(user_id, film_id, public=False):
     """
     Save a film to a user's watchlist.
 
@@ -35,7 +35,7 @@ def add_to_watchlist(user_id, film_id):
     if existing:
         raise AlreadyInWatchlistError(f"Film with id '{film_id}' is already in the watchlist for user '{user_id}'")
 
-    entry = WatchlistEntry(user_id=user_id, film_id=film_id)
+    entry = WatchlistEntry(user_id=user_id, film_id=film_id, public=public)
     db.session.add(entry)
     db.session.commit()
     return entry
