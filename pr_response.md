@@ -1,7 +1,7 @@
 # PR Response Doc — CineLog Watchlist Feature
 
 ## AI Usage
-<!-- Fill in at the end — how you used AI tools during this project -->
+I used claude minimally during this project just to understand various git commands because I was unfamiliar with rebase, checkout, etc. I also used claude to verify my git commits comply with standards, making my commits both consistant with industry standards and with this project.
 
 ## Comment 1 — Rename
 **What I did:**
@@ -56,4 +56,48 @@ N/A
 N/A
 
 ## PR Description
-<!-- Written at the end — feature overview, design decisions, manual testing steps -->
+Overview
+This pull request adds the CineLog watchlist feature. Users can add films to their watchlist and retrieve their saved watchlist entries through the watchlist API endpoints. The implementation follows the existing collection-service patterns, prevents duplicate watchlist entries, validates that films exist before saving them, and supports the UUID-based film IDs introduced on main.
+
+Design Decisions
+Visibility default
+I chose to make new watchlist entries private by default.
+
+I made this choice because I wanted to optimize for user privacy. The tradeoff is that users will have to take an extra step to share their watchlist.
+
+Sort order
+I chose to return watchlist entries in alphabetical order.
+
+I chose this order to make sure that entries are in a consistent and reliable order. I considered the reviewer’s preference for order by"date added", but decided that overall watchlist order consistency when wanting to watch an earlier watchlist addition is more important, while acknowledging that recent watchlist additions will not conveniently remain at the top.
+
+Manual Testing
+Check out the feature branch:
+
+git checkout feature/watchlist
+Create and activate the virtual environment:
+
+python -m venv .venv
+source .venv/bin/activate
+Install the project dependencies:
+
+pip install -r requirements.txt
+Start the application:
+
+python app.py
+In a second terminal, add an existing film to a user’s watchlist:
+
+curl -X POST http://127.0.0.1:5000/watchlist/1/add \
+  -H "Content-Type: application/json" \
+  -d '{"film_id":"REPLACE_WITH_AN_EXISTING_FILM_UUID"}'
+Retrieve the user’s watchlist:
+
+curl http://127.0.0.1:5000/watchlist/1
+Confirm that the newly added film appears and that the entries use the documented visibility default and sort order.
+
+Send the same add request again and confirm that a duplicate watchlist entry is not created.
+
+Try adding a nonexistent film UUID and confirm that the API returns the expected error response.
+
+Run the complete automated test suite:
+
+pytest tests/ -v
